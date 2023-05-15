@@ -37,7 +37,7 @@ mkdir -p "$TEMP_DIRECTORY"
 
 DOTNET_COMMON_ARGS="-p:DebugType=embedded -p:Version=$VERSION -p:SourceRevisionId=$SOURCE_REVISION_ID --self-contained true $EXTRA_ARGS"
 
-dotnet restore
+#dotnet restore
 dotnet build -c $CONFIGURATION src/Ryujinx.Ava
 dotnet publish -c $CONFIGURATION -r osx-arm64 -o "$TEMP_DIRECTORY/publish_arm64" $DOTNET_COMMON_ARGS src/Ryujinx.Ava
 dotnet publish -c $CONFIGURATION -r osx-x64 -o "$TEMP_DIRECTORY/publish_x64" $DOTNET_COMMON_ARGS src/Ryujinx.Ava
